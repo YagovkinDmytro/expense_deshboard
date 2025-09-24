@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ClickCounter from "./ClickCounter";
 
 const EventHandling = () => {
   const [clicks, setClicks] = useState(0);

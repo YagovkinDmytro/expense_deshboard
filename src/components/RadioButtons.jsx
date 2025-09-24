@@ -7,8 +7,8 @@ const RadioButtons = () => {
   };
 
   return (
-    <>
-      <h1>Select coffee size</h1>
+    <div>
+      <h3>Select coffee size</h3>
       <label>
         <input
           type="radio"
@@ -39,7 +39,7 @@ const RadioButtons = () => {
         />
         Large
       </label>
-    </>
+    </div>
   );
 };
 

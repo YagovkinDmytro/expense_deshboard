@@ -6,7 +6,7 @@ const Modal = () => {
     const intervalId = setInterval(() => {
       console.log("Effect");
       console.log(`Interval - ${Date.now()}`);
-    }, 2000);
+    }, 1000);
 
     return () => {
       // Очищаємо інтервал за його ідентифікатором
