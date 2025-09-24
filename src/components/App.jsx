@@ -4,7 +4,7 @@ import UncontrolledLoginForm from "./UncontrolledLoginForm";
 import SeveralUseEffects from "./SeveralUseEffects";
 import SelectElement from "./SelectElement";
 import SaveLocalStorage from "./SaveLocalStorage";
-import RadioButtons from "./radioButtons";
+import RadioButtons from "./RadioButtons";
 import EventHandling from "./EventHandling";
 import DisassemblyStage from "./DisassemblyStage";
 import ControlledElements from "./ControlledElements";
