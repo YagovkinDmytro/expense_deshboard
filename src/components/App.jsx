@@ -9,7 +9,7 @@ import EventHandling from "./EventHandling";
 import DisassemblyStage from "./DisassemblyStage";
 import ControlledElements from "./ControlledElements";
 import Card from "./Card";
-import CheckboxElement from "./checkboxElement";
+import CheckboxElement from "./CheckboxElement";
 import "./App.css";
 
 function App() {
