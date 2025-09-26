@@ -29,10 +29,6 @@ function App() {
   });
   const [filter, setFilter] = useState("");
 
-  // const handleFilter = (value) => {
-  //   setFilter(value);
-  // };
-
   const addTask = (newTask) => {
     setTasks((prevTasks) => {
       return [...prevTasks, newTask];
@@ -50,11 +46,13 @@ function App() {
     });
   };
 
+  const handleFilter = (evt) => {
+    setFilter(evt.target.value);
+  };
+
   const visibleTasks = tasks.filter((task) =>
     task.text.toLowerCase().includes(filter.toLowerCase())
   );
-
-  console.log(visibleTasks);
 
   // Колбек-функція для обробки сабміту форми
   const handleLogin = (userData) => {
@@ -111,7 +109,7 @@ function App() {
       </Card>
       <Card text="Task manager">
         <TaskForm onAdd={addTask} />
-        <TaskFilter value={filter} onFilter={setFilter} />
+        <TaskFilter value={filter} onFilter={handleFilter} />
         <TaskList tasks={visibleTasks} onDelete={deleteTask} />
       </Card>
     </>

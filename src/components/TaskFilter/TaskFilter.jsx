@@ -9,7 +9,7 @@ const TaskFilter = ({ value, onFilter }) => {
         type="text"
         name="filter"
         value={value}
-        onChange={(evt) => onFilter(evt.target.value)}
+        onChange={onFilter}
         placeholder="Type here..."
       ></input>
     </div>
