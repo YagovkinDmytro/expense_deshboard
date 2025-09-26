@@ -1,5 +1,9 @@
+import initialTasks from "../tasks.json";
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
+import "./App.css";
+import { useEffect, useState } from "react";
+import Card from "./Card";
 import UncontrolledLoginForm from "./UncontrolledLoginForm";
 import SeveralUseEffects from "./SeveralUseEffects";
 import SelectElement from "./SelectElement";
@@ -8,16 +12,56 @@ import RadioButtons from "./RadioButtons";
 import EventHandling from "./EventHandling";
 import DisassemblyStage from "./DisassemblyStage";
 import ControlledElements from "./ControlledElements";
-import Card from "./Card";
 import CheckboxElement from "./CheckboxElement";
-import "./App.css";
+import ControlledLoginForm from "./ControlledLoginForm";
+import TaskForm from "./TaskForm/TaskForm";
+import TaskFilter from "./TaskFilter/TaskFilter";
+import TaskList from "./TaskList/TaskList";
 
 function App() {
+  const [lang, setLang] = useState("uk");
+  const [tasks, setTasks] = useState(() => {
+    const dataTasks = window.localStorage.getItem("tasks");
+    if (dataTasks !== null) {
+      return JSON.parse(dataTasks);
+    }
+    return initialTasks;
+  });
+  const [filter, setFilter] = useState("");
+
+  // const handleFilter = (value) => {
+  //   setFilter(value);
+  // };
+
+  const addTask = (newTask) => {
+    setTasks((prevTasks) => {
+      return [...prevTasks, newTask];
+    });
+  };
+
+  useEffect(() => {
+    const jsonTasks = JSON.stringify(tasks);
+    window.localStorage.setItem("tasks", jsonTasks);
+  }, [tasks]);
+
+  const deleteTask = (taskId) => {
+    setTasks((prevTasks) => {
+      return prevTasks.filter((task) => task.id !== taskId);
+    });
+  };
+
+  const visibleTasks = tasks.filter((task) =>
+    task.text.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  console.log(visibleTasks);
+
   // Колбек-функція для обробки сабміту форми
   const handleLogin = (userData) => {
     // Виконуємо необхідні операції з даними
     console.log(userData);
   };
+
   return (
     <>
       <div>
@@ -50,7 +94,8 @@ function App() {
         </div>
       </Card>
       <Card text="Select Element">
-        <SelectElement />
+        <p>Selected language: {lang}</p>
+        <SelectElement value={lang} onSelect={setLang} />
       </Card>
       <Card text="Radio Buttons">
         <RadioButtons />
@@ -61,27 +106,16 @@ function App() {
       <Card text="Checkbox Element">
         <CheckboxElement />
       </Card>
+      <Card text="Controlled LoginForm">
+        <ControlledLoginForm />
+      </Card>
+      <Card text="Task manager">
+        <TaskForm onAdd={addTask} />
+        <TaskFilter value={filter} onFilter={setFilter} />
+        <TaskList tasks={visibleTasks} onDelete={deleteTask} />
+      </Card>
     </>
   );
 }
 
 export default App;
-
-/////////////////////////////////////// - Select Element
-
-// import { useState } from "react";
-// import SelectElement from "./SelectElement";
-// import CheckboxElement from "./checkboxElement";
-
-// const App = () => {
-//   const [lang, setLang] = useState("uk");
-
-//   return (
-//     <>
-//       <p>Selected language: {lang}</p>
-//       <SelectElement value={lang} onSelect={setLang} />
-//       <CheckboxElement />
-//     </>
-//   );
-// };
-// export default App;

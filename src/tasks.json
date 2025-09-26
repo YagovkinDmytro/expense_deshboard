@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "text": "Buy groceries"
+  },
+  {
+    "id": "2",
+    "text": "Finish the report"
+  },
+  {
+    "id": "3",
+    "text": "Call the client"
+  },
+  {
+    "id": "4",
+    "text": "Go to the gym"
+  },
+  {
+    "id": "5",
+    "text": "Read 20 pages of a book"
+  },
+  {
+    "id": "6",
+    "text": "Clean the apartment"
+  },
+  {
+    "id": "7",
+    "text": "Prepare presentation slides"
+  }
+]
