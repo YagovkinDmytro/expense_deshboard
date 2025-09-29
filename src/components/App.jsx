@@ -17,6 +17,7 @@ import ControlledLoginForm from "./ControlledLoginForm";
 import TaskForm from "./TaskForm/TaskForm";
 import TaskFilter from "./TaskFilter/TaskFilter";
 import TaskList from "./TaskList/TaskList";
+import FeedbackForm from "./FeedbackForm/FeedbackForm";
 
 function App() {
   const [lang, setLang] = useState("uk");
@@ -111,6 +112,9 @@ function App() {
         <TaskForm onAdd={addTask} />
         <TaskFilter value={filter} onFilter={handleFilter} />
         <TaskList tasks={visibleTasks} onDelete={deleteTask} />
+      </Card>
+      <Card text="Feedback form">
+        <FeedbackForm />
       </Card>
     </>
   );
