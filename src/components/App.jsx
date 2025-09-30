@@ -18,6 +18,7 @@ import TaskForm from "./TaskForm/TaskForm";
 import TaskFilter from "./TaskFilter/TaskFilter";
 import TaskList from "./TaskList/TaskList";
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
+import HttpRequest from "./HttpRequest/HttpRequest";
 
 function App() {
   const [lang, setLang] = useState("uk");
@@ -115,6 +116,9 @@ function App() {
       </Card>
       <Card text="Feedback form">
         <FeedbackForm />
+      </Card>
+      <Card text="Http requests">
+        <HttpRequest />
       </Card>
     </>
   );
