@@ -1,4 +1,4 @@
-const SearchForm = ({ handleSearch }) => {
+const SearchForm = ({ onSearch }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
@@ -8,7 +8,7 @@ const SearchForm = ({ handleSearch }) => {
       return;
     }
     console.log(topic);
-    handleSearch(topic);
+    onSearch(topic);
     form.reset();
   };
   return (
