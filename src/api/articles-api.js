@@ -7,6 +7,7 @@ export const fetchArticlesWithTopic = async (topic, page) => {
     params: {
       query: topic,
       page,
+      hitsPerPage: 20,
     },
   });
   console.log(response);

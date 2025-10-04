@@ -15,7 +15,6 @@ const SearchFormFormik = ({ onSearch }) => {
       alert("Please enter search term!");
       return;
     }
-    console.log(values);
     onSearch(values.topic);
     actions.resetForm();
   };
