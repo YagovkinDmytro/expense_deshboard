@@ -19,6 +19,7 @@ import TaskFilter from "./TaskFilter/TaskFilter";
 import TaskList from "./TaskList/TaskList";
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import HttpRequest from "./HttpRequest/HttpRequest";
+import HookUseMemo from "./HookUseMemo/HookUseMemo";
 
 function App() {
   const [lang, setLang] = useState("uk");
@@ -119,6 +120,9 @@ function App() {
       </Card>
       <Card text="Http requests">
         <HttpRequest />
+      </Card>
+      <Card text="Hook useMemo">
+        <HookUseMemo />
       </Card>
     </>
   );
