@@ -20,6 +20,9 @@ import TaskList from "./TaskList/TaskList";
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import HttpRequest from "./HttpRequest/HttpRequest";
 import HookUseMemo from "./HookUseMemo/HookUseMemo";
+import HookUseRef from "./SearchFormFormik/HookUseRef/HookUseRef";
+import VideoPlayer from "./VideoPlayer/VideoPlayer";
+import CustomButtonRef from "./CustomButtonRef/CustomButtonRef";
 
 function App() {
   const [lang, setLang] = useState("uk");
@@ -123,6 +126,15 @@ function App() {
       </Card>
       <Card text="Hook useMemo">
         <HookUseMemo />
+      </Card>
+      <Card text="Hook useRef">
+        <HookUseRef />
+      </Card>
+      <Card text="Hook useRef + Player">
+        <VideoPlayer />
+      </Card>
+      <Card text="CustomButtonRef">
+        <CustomButtonRef />
       </Card>
     </>
   );
