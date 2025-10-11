@@ -12,18 +12,19 @@ const HookUseRef = () => {
   useEffect(() => {
     // Ефект виконується після монтування,
     // тому завжди буде посиланням на DOM-елемент
-    console.log("useEffect: ", btnRef.current);
+    console.log("btnRef in useEffect: ", btnRef.current);
     // Виконається лише один раз під час монтування.
     // Наступні оновлення значення рефа не
     // викличуть оновлення компонента
-    console.log(valueRef.current);
+    console.log("valueRef in useEffect:", valueRef.current);
   });
 
   const handleClick = () => {
     // Кліки будуть після монтування,
     // тому завжди буде посиланням на DOM-елемент
-    console.log("handleClick: ", btnRef.current);
     valueRef.current += 1;
+    console.log("handleClick: ", btnRef.current);
+    console.log("handleClick: ", valueRef.current);
   };
 
   return (
