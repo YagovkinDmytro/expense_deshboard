@@ -18,7 +18,7 @@ function App() {
           <Route path="request" element={<Request />} />
           <Route path="task" element={<TaskManager />} />
         </Route>
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" replace="true" />} />
       </Routes>
     </>
   );

@@ -13,24 +13,29 @@ const HookUseRef = () => {
     // Ефект виконується після монтування,
     // тому завжди буде посиланням на DOM-елемент
     console.log("btnRef in useEffect: ", btnRef.current);
+    btnRef.current.focus();
     // Виконається лише один раз під час монтування.
     // Наступні оновлення значення рефа не
     // викличуть оновлення компонента
     console.log("valueRef in useEffect:", valueRef.current);
-  });
+  }, []);
 
   const handleClick = () => {
     // Кліки будуть після монтування,
     // тому завжди буде посиланням на DOM-елемент
     valueRef.current += 1;
     console.log("handleClick: ", btnRef.current);
-    console.log("handleClick: ", valueRef.current);
+    console.log("handleClickValue: ", valueRef.current);
+  };
+
+  const handleClickValue = () => {
+    setValue(value + 1);
   };
 
   return (
     <>
-      <button onClick={() => setValue(value + 1)}>
-        Update value to trigger re-render
+      <button onClick={handleClickValue}>
+        Update value to trigger re-render, value: {value}
       </button>
       <button ref={btnRef} onClick={handleClick}>
         Button with ref
